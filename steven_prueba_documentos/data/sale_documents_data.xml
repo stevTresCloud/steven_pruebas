@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="documents_sale_folder" model="documents.folder">
+            <field name="name">Sales</field>
+            <field name="sequence">20</field>
+        </record>
+
+        <record id="base.main_company" model="res.company">
+            <field name="sale_folder" ref="documents_sale_folder"/>
+        </record>
+
+        <!-- Customer documents -->
+        <record id="documents_customer_documents_facet" model="documents.facet">
+            <field name="name">Customer Documents</field>
+            <field name="sequence">8</field>
+            <field name="folder_id" ref="documents_sale_folder"/>
+        </record>
+
+        <record id="documents_identity_card_tag" model="documents.tag">
+            <field name="name">Identity Card</field>
+            <field name="facet_id" ref="documents_customer_documents_facet"/>
+            <field name="sequence">15</field>
+        </record>
+
+        <record id="documents_voting_document_tag" model="documents.tag">
+            <field name="name">Voting Document</field>
+            <field name="facet_id" ref="documents_customer_documents_facet"/>
+            <field name="sequence">16</field>
+        </record>
+
+        <!-- Promise of dale documents -->
+        <record id="documents_sale_purchase_promise_documents_facet" model="documents.facet">
+            <field name="name">Sale purchase promise</field>
+            <field name="sequence">9</field>
+            <field name="folder_id" ref="documents_sale_folder"/>
+        </record>
+
+        <record id="documents_basic_services_worksheet_tag" model="documents.tag">
+            <field name="name">Basic services worksheet</field>
+            <field name="facet_id" ref="documents_sale_purchase_promise_documents_facet"/>
+            <field name="sequence">17</field>
+        </record>
+
+        <record id="documents_proof_of_deposit_payment_of_reservation_tag" model="documents.tag">
+            <field name="name">Proof of deposit payment of reservation</field>
+            <field name="facet_id" ref="documents_sale_purchase_promise_documents_facet"/>
+            <field name="sequence">18</field>
+        </record>
+
+        <record id="documents_quote_signed_by_client_tag" model="documents.tag">
+            <field name="name">Quote signed by client</field>
+            <field name="facet_id" ref="documents_sale_purchase_promise_documents_facet"/>
+            <field name="sequence">19</field>
+        </record>
+
+        <record id="documents_biess_or_private_bank_prequalification_tag" model="documents.tag">
+            <field name="name">Biess or private bank Prequalification</field>
+            <field name="facet_id" ref="documents_sale_purchase_promise_documents_facet"/>
+            <field name="sequence">20</field>
+        </record>
+
+        <record id="documents_complete_know_your_ustomer_form_tag" model="documents.tag">
+            <field name="name">Complete know your customer form</field>
+            <field name="facet_id" ref="documents_sale_purchase_promise_documents_facet"/>
+            <field name="sequence">21</field>
+        </record>
+
+        <record id="documents_payment_roles_tag" model="documents.tag">
+            <field name="name">Payment roles</field>
+            <field name="facet_id" ref="documents_sale_purchase_promise_documents_facet"/>
+            <field name="sequence">22</field>
+        </record>
+
+        <record id="documents_payment_roles_tag" model="documents.tag">
+            <field name="name">Payment roles</field>
+            <field name="facet_id" ref="documents_sale_purchase_promise_documents_facet"/>
+            <field name="sequence">23</field>
+        </record>
+
+        <record id="documents_purchase_and_sale_promise_signed_with_pay_table_tag" model="documents.tag">
+            <field name="name">Purchase and sale promise signed with pay table</field>
+            <field name="facet_id" ref="documents_sale_purchase_promise_documents_facet"/>
+            <field name="sequence">24</field>
+        </record>
+
+        <!-- Promise of dale documents -->
+        <record id="documents_contract_facet" model="documents.facet">
+            <field name="name">Contract</field>
+            <field name="sequence">10</field>
+            <field name="folder_id" ref="documents_sale_folder"/>
+        </record>
+
+        <record id="documents_notary_payment_tag" model="documents.tag">
+            <field name="name">Notary Payment</field>
+            <field name="facet_id" ref="documents_contract_facet"/>
+            <field name="sequence">25</field>
+        </record>
+
+        <record id="documents_lawyer_payment_tag" model="documents.tag">
+            <field name="name">Lawyer payment</field>
+            <field name="facet_id" ref="documents_contract_facet"/>
+            <field name="sequence">26</field>
+        </record>
+
+        <!-- Addendum documents -->
+        <record id="documents_addendum_documents_facet" model="documents.facet">
+            <field name="name">Addendum</field>
+            <field name="sequence">11</field>
+            <field name="folder_id" ref="documents_sale_folder"/>
+        </record>
+
+        <record id="documents_resile_tag" model="documents.tag">
+            <field name="name">Resile</field>
+            <field name="facet_id" ref="documents_addendum_documents_facet"/>
+            <field name="sequence">27</field>
+        </record>
+
+        <record id="documents_addendum_tag" model="documents.tag">
+            <field name="name">Addendum</field>
+            <field name="facet_id" ref="documents_addendum_documents_facet"/>
+            <field name="sequence">28</field>
+        </record>
+
+    </data>
+</odoo>

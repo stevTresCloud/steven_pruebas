@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="documents_tags_view_form_inherit" model="ir.ui.view">
+            <field name="name">documents.tags.view.form.inherit</field>
+            <field name="model">documents.tag</field>
+            <field name="inherit_id" ref="documents.tag_view_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='facet_id']" position="after">
+                    <field name="is_required_documents_tag" groups="documents.group_documents_manager"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="sale_reference_documents_form_inherit" model="ir.ui.view">
+            <field name="name">sale.reference.documents.form.inherit</field>
+            <field name="model">documents.document</field>
+            <field name="inherit_id" ref="documents.document_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='tag_ids']" position="before">
+                    <field name="is_contract_document" widget="boolean_toggle"/>
+                    <field name="sale_order_id"
+                           attrs="{'invisible': [('is_contract_document', '=', False)],
+                                   'required': [('is_contract_document', '=', True)]}"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

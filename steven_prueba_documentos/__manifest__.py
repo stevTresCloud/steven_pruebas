@@ -1,35 +1,28 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Prueba de documentos",
-
+    'name': "Steven documentos ventas",
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
         subtitle on modules listing or apps.openerp.com""",
-
     'description': """
-        Prueba de documentos
+        Prueba de documentos en ventas
     """,
+    'author': 'TRESCLOUD CIA LTDA',
+    'maintainer': 'TRESCLOUD CIA LTDA',
+    'website': 'http://www.trescloud.com',
+    'category': 'Productivity/Documents',
+    'version': '1.0',
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'depends': ['documents', 'sale_management'],
 
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
-    # for the full list
-    'category': 'Uncategorized',
-    'version': '0.1',
-
-    # any module necessary for this one to work correctly
-    'depends': ['base'],
-
-    # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        # Data
+        'data/sale_documents_data.xml',
+
+        # Views
+        'views/documents_views.xml',
+        'views/res_config_view.xml',
     ],
-    # only loaded in demonstration mode
-    # 'demo': [
-    #     'demo/demo.xml',
-    # ],
+    'installable': True,
+    'auto_install': True,
 }
