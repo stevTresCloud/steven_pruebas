@@ -19,7 +19,7 @@ class ResCompany(models.Model):
         'documents.folder',
         string="Sale Workspace",
         domain=_domain_company,
-        default=lambda self: self.env.ref('documents_sale_folder', raise_if_not_found=False)
+        default=lambda self: self.env.ref('steven_prueba_documentos.documents_sale_folder', raise_if_not_found=False)
         )
     sale_tags = fields.Many2many(
         'documents.tag',

@@ -19,7 +19,7 @@
             <field name="inherit_id" ref="documents.document_view_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='tag_ids']" position="before">
-                    <field name="is_contract_document" widget="boolean_toggle"/>
+                    <field name="is_contract_document"/>
                     <field name="sale_order_id"
                            attrs="{'invisible': [('is_contract_document', '=', False)],
                                    'required': [('is_contract_document', '=', True)]}"/>

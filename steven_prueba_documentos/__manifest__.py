@@ -22,6 +22,7 @@
         # Views
         'views/documents_views.xml',
         'views/res_config_view.xml',
+        'views/sale_order_views.xml',
     ],
     'installable': True,
     'auto_install': True,
